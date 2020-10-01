@@ -1,24 +1,39 @@
-# README
+# copilot-rails-deploy
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+copilotでECS FargateにRailsアプリをデプロイする
 
-Things you may want to cover:
+## 初期設定
 
-* Ruby version
+rails の database.yml に RDS の設定を追記してください(Mysql)
 
-* System dependencies
+```ruby
+# ror/config/database.yml
 
-* Configuration
+default: &default
+  adapter: postgresql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: ## RDS database ##
+  host: ## RDS host ##
+  username: ## RDS username ##
+  password: ## RDS password ##
 
-* Database creation
+development:
+  <<: *default
 
-* Database initialization
+test:
+  <<: *default
 
-* How to run the test suite
+production:
+  <<: *default
+```
 
-* Services (job queues, cache servers, search engines, etc.)
+ビルドしてコンテナを作ります
 
-* Deployment instructions
+```bash
+$ docker-compose build
 
-* ...
+$ docker-compose up -d
+```
+
+http://localhost:3000
