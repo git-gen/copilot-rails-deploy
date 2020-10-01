@@ -1,0 +1,19 @@
+# ror/config/database.yml
+
+default: &default
+  adapter: mysql
+  encoding: utf8
+  pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
+  database: ## RDS database ##
+  host: ## RDS host ##
+  username: ## RDS username ##
+  password: ## RDS password ##
+
+development:
+  <<: *default
+
+test:
+  <<: *default
+
+production:
+  <<: *default
