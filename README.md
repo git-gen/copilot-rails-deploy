@@ -10,7 +10,7 @@ rails の database.yml に RDS の設定を追記してください(Mysql)
 # ror/config/database.yml
 
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: ## RDS database ##
