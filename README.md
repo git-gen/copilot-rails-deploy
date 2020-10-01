@@ -37,3 +37,21 @@ $ docker-compose up -d
 ```
 
 http://localhost:3000
+
+## copilotデプロイ手順
+
+```bash
+# アプリの作成
+$ copilot app init
+
+# 環境の作成
+$ copilot env init
+
+# サービス追加
+$ copilot svc init
+
+# デプロイ
+$ copilot deploy
+```
+
+![ss](https://github.com/git-gen/copilot-rails-deploy/blob/master/readme_ss/screenshot.png)
