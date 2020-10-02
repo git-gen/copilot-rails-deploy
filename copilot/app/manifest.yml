@@ -1,0 +1,16 @@
+name: app
+type: Load Balanced Web Service
+
+image:
+  build: ./Dockerfile
+  port: 3000
+
+http:
+  path: "/"
+
+cpu: 1024
+memory: 2048
+count: 1
+
+variables:
+  RAILS_ENV: development
