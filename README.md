@@ -10,7 +10,7 @@ rails の database.yml に RDS の設定を追記してください(Mysql)
 # ror/config/database.yml
 
 default: &default
-  adapter: postgresql
+  adapter: mysql2
   encoding: utf8
   pool: <%= ENV.fetch("RAILS_MAX_THREADS") { 5 } %>
   database: ## RDS database ##
@@ -37,3 +37,21 @@ $ docker-compose up -d
 ```
 
 http://localhost:3000
+
+## copilotデプロイ手順
+
+```bash
+# アプリの作成
+$ copilot app init
+
+# 環境の作成
+$ copilot env init
+
+# サービス追加
+$ copilot svc init
+
+# デプロイ
+$ copilot deploy
+```
+
+![ss](https://github.com/git-gen/copilot-rails-deploy/blob/master/readme_ss/screenshot.png)
