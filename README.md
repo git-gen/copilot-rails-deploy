@@ -7,7 +7,7 @@ copilotでECS FargateにRailsアプリをデプロイする
 rails の database.yml に RDS の設定を追記してください(Mysql)
 
 ```ruby
-# ror/config/database.yml
+# config/database.yml
 
 default: &default
   adapter: mysql2
